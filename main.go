@@ -10,9 +10,9 @@ import (
 func main() {
   port := os.Getenv("PORT")
 
-  if port == "" {
-    log.Fatal("$PORT must be set")
-  }
+  // if port == "" {
+  //   log.Fatal("$PORT must be set")
+  // }
 
   http.Handle("/public/", http.StripPrefix("/public/", http.FileServer(http.Dir("public"))))
   http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
